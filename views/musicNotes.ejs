@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+  <%- include('partials/head')%>
+  <link rel="stylesheet" href="/css/musicNotes.css" />
+</head>
+<html lang="en">
+  <body>
+    <%- include('partials/navbar')%>
+    <h1>Music Notes</h1>
+    <h2>for every scale and mode</h2>
+    <div id="selectorHolder">
+      <p>
+        Select Scale:
+        <select name="selectScale" id="noteSelect">
+          <option value="0">C</option>
+          <option value="1">C#</option>
+          <option value="2">D</option>
+          <option value="3">D#</option>
+          <option value="4">E</option>
+          <option value="5">F</option>
+          <option value="6">F#</option>
+          <option value="7">G</option>
+          <option value="8">G#</option>
+          <option value="9">A</option>
+          <option value="10">A#</option>
+          <option value="11">B</option>
+        </select>
+      </p>
+      <p>
+        Select Mode:
+        <select name="selectMode" id="modeSelect">
+          <option value="Ionian">Ionian</option>
+          <option value="Dorian">Dorian</option>
+          <option value="Phrygian">Phrygian</option>
+          <option value="Lydian">Lydian</option>
+          <option value="Mixolydian">Mixolydian</option>
+          <option value="Aeolian">Aeolian</option>
+          <option value="Locrian">Locrian</option>
+        </select>
+      </p>
+      <p><button id="getNotes" type="button">Display Notes</button></p>
+    </div>
+    <div id="scaleHolder"></div>
+    <div id="legend">
+      <div id="colorLegend">
+        <p>Hover to see!</p>
+        <div class="colorWords">
+          <div class="legendColors" id="greenLegend">Root</div>
+        </div>
+        <div class="colorWords">
+          <div class="legendColors" id="redLegend">Third</div>
+        </div>
+        <div class="colorWords">
+          <div class="legendColors" id="blueLegend">Fifth</div>
+        </div>
+        <div class="colorWords">
+          <div class="legendColors" id="purpleLegend">Seventh</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pianoContainer">
+      <div data-note="C" class="key white"></div>
+      <div data-note="Db" class="key black"></div>
+      <div data-note="D" class="key white"></div>
+      <div data-note="Eb" class="key black"></div>
+      <div data-note="E" class="key white"></div>
+      <div data-note="F" class="key white"></div>
+      <div data-note="Gb" class="key black"></div>
+      <div data-note="G" class="key white"></div>
+      <div data-note="Ab" class="key black"></div>
+      <div data-note="A" class="key white"></div>
+      <div data-note="Bb" class="key black"></div>
+      <div data-note="B" class="key white"></div>
+      <div data-note="C" class="key white"></div>
+      <div data-note="Db" class="key black"></div>
+      <div data-note="D" class="key white"></div>
+      <div data-note="Eb" class="key black"></div>
+      <div data-note="E" class="key white"></div>
+      <div data-note="F" class="key white"></div>
+      <div data-note="Gb" class="key black"></div>
+      <div data-note="G" class="key white"></div>
+      <div data-note="Ab" class="key black"></div>
+      <div data-note="A" class="key white"></div>
+      <div data-note="Bb" class="key black"></div>
+      <div data-note="B" class="key white"></div>
+      <div data-note="C" class="key white"></div>
+      <div data-note="Db" class="key black"></div>
+      <div data-note="D" class="key white"></div>
+      <div data-note="Eb" class="key black"></div>
+      <div data-note="E" class="key white"></div>
+      <div data-note="F" class="key white"></div>
+      <div data-note="Gb" class="key black"></div>
+      <div data-note="G" class="key white"></div>
+      <div data-note="Ab" class="key black"></div>
+      <div data-note="A" class="key white"></div>
+      <div data-note="Bb" class="key black"></div>
+      <div data-note="B" class="key white"></div>
+    </div>
+    <script src="/js/musicNotes.js"></script>
+  </body>
+</html>
