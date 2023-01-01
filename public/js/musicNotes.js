@@ -1,7 +1,7 @@
 //Holds the list of notes created by this javascript file (is an empty div in html)
 const scaleHolder = document.getElementById("scaleHolder");
 
-//reference point for all of the below functions to choose the notes from
+//reference array for the functions below to choose the notes from
 const scaleNotes = [
   "C",
   "C#",
@@ -33,7 +33,7 @@ const scaleNotes = [
 //defines the starting spot in the array(which scale note is selected to be the "root")
 let startSpot = 0;
 
-//selects the intial start note to determine what "key" you'll be in
+//option for the intial start note to determine what "key" you'll be in
 let noteSelect = document.getElementById("noteSelect");
 
 //when selecting a note, this will change the startSpot variable to be that note
@@ -110,7 +110,7 @@ const handleMouseOut = (note) => {
   }
 };
 
-//creates 8 p elemeents to contain each of the notes based on the start spot you selected
+//creates 7 p elemeents to hold each of the notes
 //also adds a class,id,eventlistener mouseover/out,and gets its element by id to be used (ex note0, note1...)
 const createScales = (x, y) => {
   for (let i = 0; i < 7; i++) {
@@ -127,15 +127,6 @@ const createScales = (x, y) => {
 //calls function createScales to create the notes and assignes id of note[i] (1-8)
 createScales(scaleHolder, "note");
 
-//sets default starting notes to display (so they show up on reload)
-note0.innerText = scaleNotes[startSpot] + " - I";
-note1.innerText = scaleNotes[startSpot + 2] + " - ii";
-note2.innerText = scaleNotes[startSpot + 4] + " - iii";
-note3.innerText = scaleNotes[startSpot + 5] + " - IV";
-note4.innerText = scaleNotes[startSpot + 7] + " - V";
-note5.innerText = scaleNotes[startSpot + 9] + " - vi";
-note6.innerText = scaleNotes[startSpot + 11] + " - vii°";
-
 //sets the default mode to be displayed (so they show up on reload)
 let mode = "Ionian";
 
@@ -148,7 +139,7 @@ modeSelect.addEventListener("change", function () {
 });
 
 //is a layout of the logic for the roman numeral displays depending on what scale you are in
-//and is a map for the noteMath that determines what notes will be displayed (based on the "startSpot" option selected)
+//is also a map for the "noteMath" that determines what notes will be displayed (based on the "startSpot" option selected)
 const modeMap = {
   Ionian: {
     degree: ["I", "ii", "iii", "IV", "V", "vi", "vii°"],
@@ -193,3 +184,6 @@ getNotes.addEventListener("click", function () {
     note.innerText = `${scaleNotes[startSpot + noteMath[i]]} - ${degrees[i]}`;
   }
 });
+
+//simulates a click on getNotes function to initialize the notes on the page upon reload
+getNotes.click();

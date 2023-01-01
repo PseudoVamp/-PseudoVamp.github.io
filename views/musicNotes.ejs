@@ -10,7 +10,7 @@
     <h2>for every scale and mode</h2>
     <div id="selectorHolder">
       <p>
-        Select Scale:
+        Select Key:
         <select name="selectScale" id="noteSelect">
           <option value="0">C</option>
           <option value="1">C#</option>
@@ -29,12 +29,12 @@
       <p>
         Select Mode:
         <select name="selectMode" id="modeSelect">
-          <option value="Ionian">Ionian</option>
+          <option value="Ionian">Ionian (major)</option>
           <option value="Dorian">Dorian</option>
           <option value="Phrygian">Phrygian</option>
           <option value="Lydian">Lydian</option>
           <option value="Mixolydian">Mixolydian</option>
-          <option value="Aeolian">Aeolian</option>
+          <option value="Aeolian">Aeolian (minor)</option>
           <option value="Locrian">Locrian</option>
         </select>
       </p>
@@ -43,7 +43,9 @@
     <div id="scaleHolder"></div>
     <div id="legend">
       <div id="colorLegend">
-        <p>Hover to see!</p>
+        <p>
+          Hover over these notes to see how a chord would be formed using the:
+        </p>
         <div class="colorWords">
           <div class="legendColors" id="greenLegend">Root</div>
         </div>

@@ -59,14 +59,6 @@ select {
   border-radius: 12px;
 }
 
-#selectorAndLegend {
-  width: 30%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .individualNotes {
   border: 2px solid black;
   padding: 6px;
@@ -90,18 +82,19 @@ select {
 #colorLegend {
   font-size: 1.5em;
   margin: 0 auto;
-  width: 30%;
-}
-.colorWords {
+  width: 75%;
   display: flex;
   flex-direction: row;
+}
+#legend {
+  display: none;
+}
+
+.colorWords {
+  width: 25%;
   margin: 2px 2px;
 }
-#colorLegend {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 .legendColors {
   padding: 4px;
   border: 1px solid black;
@@ -121,12 +114,6 @@ select {
   background-color: purple;
 }
 
-#legend {
-  display: flex;
-  justify-content: center;
-  width: 70%;
-  margin: 0 auto;
-}
 #pianoContainer {
   display: none;
 }
@@ -168,6 +155,12 @@ select {
     display: flex;
     justify-content: center;
     margin-top: 15px;
+  }
+  #legend {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 0 auto;
   }
 }
 @media (min-width: 1000px) {
