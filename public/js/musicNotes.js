@@ -174,14 +174,30 @@ const modeMap = {
 //grabs the button that is used to submit your selection and display the notes
 let getNotes = document.getElementById("getNotes");
 
+const removeHighlight = () => {
+  const yellowHighlight = document.getElementsByClassName("highlightYellow");
+  for (var i = 0; i < yellowHighlight.length; i++) {
+    yellowHighlight[i].classList.remove("highlightYellow");
+  }
+};
+
 //makes the submit button work, and takes in the modeMap logic to be used
 //the loop goes over each note based on its startSpot and moves up the index 0-6 setting each actual note, and the roman numeral
 getNotes.addEventListener("click", function () {
   const noteMath = modeMap[mode].noteMath;
   const degrees = modeMap[mode].degree;
+  removeHighlight();
+  removeHighlight();
+  removeHighlight();
+  removeHighlight();
+
   for (let i = 0; i < 7; i++) {
     const note = document.getElementById(`note${i}`);
     note.innerText = `${scaleNotes[startSpot + noteMath[i]]} - ${degrees[i]}`;
+    const pianoNote = document.getElementById(
+      `piano${scaleNotes[startSpot + noteMath[i]]}`
+    );
+    pianoNote.classList.add("highlightYellow");
   }
 });
 

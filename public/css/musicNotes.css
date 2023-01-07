@@ -141,8 +141,11 @@ select {
 .black.active {
   background-color: #333;
 }
+.highlightGreen {
+  background-color: green;
+}
 
-.TEST {
+.highlightYellow {
   background-color: yellow;
 }
 
