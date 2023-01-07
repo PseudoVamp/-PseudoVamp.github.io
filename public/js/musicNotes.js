@@ -41,14 +41,14 @@ noteSelect.addEventListener("change", function () {
   startSpot = parseInt(this.value);
 });
 
-//this will add the colors to the root,third,fifth, and seventh note when you hover over one (hovered one is the root)
+//this will add the colors to the root,third,fifth, and seventh note when you hover over one (hovered one is root)
 const addColors = (a, b, c, d) => {
   a.classList.add("chordsGreen");
   b.classList.add("chordsRed");
   c.classList.add("chordsBlue");
   d.classList.add("chordsPurple");
 };
-//removes the colors added above when you hover out
+//removes the colors added from addColors when you hover out
 const removeColors = (a, b, c, d) => {
   a.classList.remove("chordsGreen");
   b.classList.remove("chordsRed");
