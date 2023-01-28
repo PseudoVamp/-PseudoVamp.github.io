@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
   res.render("home.ejs");
 });
 
-//loads the second page url /secondPage
+//loads the second page url /musicNotes
 app.get("/musicNotes", (req, res) => {
   //Sets a second parameter called "rand" that is avaliable in the template for use
   res.render("musicNotes.ejs");

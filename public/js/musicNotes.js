@@ -171,11 +171,14 @@ const modeMap = {
   },
 };
 
-//grabs the button that is used to submit your selection and display the notes
+//grabs the button that is used to submit the selection and display the notes
 let getNotes = document.getElementById("getNotes");
 
+//called to remove the yellow highlighting on piano notes so they can be placed again on the correct scale
 const removeHighlight = () => {
-  const yellowHighlight = document.getElementsByClassName("highlightYellow");
+  const yellowHighlight = Array.from(
+    document.getElementsByClassName("highlightYellow")
+  );
   for (var i = 0; i < yellowHighlight.length; i++) {
     yellowHighlight[i].classList.remove("highlightYellow");
   }
@@ -186,14 +189,15 @@ const removeHighlight = () => {
 getNotes.addEventListener("click", function () {
   const noteMath = modeMap[mode].noteMath;
   const degrees = modeMap[mode].degree;
-  removeHighlight();
-  removeHighlight();
-  removeHighlight();
+  //DOES NOT WORK RIGHT?
+  //HAVE TO CALL IT A FEW TIMES TO REMOVE EVERY HIGHLIGHT?!?
+  //ONLY REMOVES THREE OR FOUR IF CALLED ONCE?! THE FK
   removeHighlight();
 
   for (let i = 0; i < 7; i++) {
     const note = document.getElementById(`note${i}`);
     note.innerText = `${scaleNotes[startSpot + noteMath[i]]} - ${degrees[i]}`;
+    //gets the piano note element and adds the  yellow highlighting to the correct notes per the scale selection
     const pianoNote = document.getElementById(
       `piano${scaleNotes[startSpot + noteMath[i]]}`
     );

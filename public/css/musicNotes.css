@@ -57,6 +57,7 @@ select {
   color: #e5dada;
   font-size: 1.5em;
   border-radius: 12px;
+  padding: 4px;
   margin: 0 0 20px 0;
 }
 
@@ -102,6 +103,7 @@ select {
   border-radius: 5px;
   color: white;
 }
+
 #greenLegend {
   background-color: green;
 }

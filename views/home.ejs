@@ -1,35 +1,18 @@
 <!DOCTYPE html>
 <!-- this includes the head partial html file to load here, so you dont duplicate code all over the place -->
 <!--  the - from ejs renders any html in the document, the = sign does not -->
-</head>
-<%- include('partials/head')%>
+<head>
+  <%- include('partials/head')%>
 </head>
 <html lang="en">
   <body>
     <%- include('partials/navbar')%>
-    <h1>first page</h1>
-    <div class="mainContent">
-      <h2>My character</h2>
-      <article>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto,
-          consequatur libero expedita autem placeat dolorem aperiam? Molestiae
-          explicabo asperiores recusandae accusamus nulla. Fuga explicabo
-          obcaecati possimus facere rerum. Odio, facilis. Consectetur omnis
-          fugit nam? Autem hic ad at, assumenda sapiente dolore incidunt nulla
-          sint iusto nesciunt aut quisquam eaque quaerat aliquam ut? Vitae,
-          similique. Fuga doloribus voluptate non! Sequi, nemo. Porro natus
-          consequuntur assumenda aspernatur dolor dolorem sint dolore, adipisci
-          fuga. Commodi dolorem quos, necessitatibus veritatis vel error a ex
-          minima accusantium beatae ad incidunt animi consectetur qui
-          perferendis provident?
-        </p>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab voluptas
-          alias similique dolorem aliquam ea tempora rerum minus qui non sint
-          iure dicta, quas quae nam, commodi, nihil veniam distinctio.
-        </p>
-      </article>
-    </div>
+
+    <div id="randomSquares"></div>
+    <!-- <article class="articleOne"></article>
+    <article class="articleTwo"></article>
+    <article class="articleThree"></article>
+    <article class="articleFour"></article> -->
+    <script src="/js/home.js"></script>
   </body>
 </html>
