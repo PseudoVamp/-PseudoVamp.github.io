@@ -61,3 +61,9 @@ nav a:hover {
   box-shadow: inset 300px 0 0 0 white;
   color: #000;
 }
+
+@media screen and (max-width: 700px) {
+  nav {
+    font-size: 12px;
+  }
+}

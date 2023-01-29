@@ -10,7 +10,7 @@ const handleMouseOver = (eachSquare) => {
 };
 
 const createSquares = (x, y) => {
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 30; i++) {
     let squares = document.createElement("div");
     squares.className = "allSquares";
     x.appendChild(squares);
