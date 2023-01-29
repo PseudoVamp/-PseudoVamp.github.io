@@ -2,8 +2,12 @@ const randomSquares = document.getElementById("randomSquares");
 
 const handleMouseOver = (eachSquare) => {
   // Generate a random x and y coordinate for the div to move to
-  const newX = Math.random() * window.innerWidth;
-  const newY = Math.random() * window.innerHeight - 200;
+  const newX = (Math.random() * window.innerWidth) / 1.1;
+  const newY = (Math.random() * window.innerHeight) / 1.5;
+  // - 200;
+
+  // const newX = Math.floor(Math.random() * 100) + "vw";
+  // const newY = Math.floor(Math.random() * (70 - 4)) + 4 + "vh";
 
   eachSquare.target.style.right = newX + "px";
   eachSquare.target.style.top = newY + "px";
@@ -19,7 +23,7 @@ const createSquares = (x, y) => {
     //   Math.random() * (max - min) + min;
     squares.style.width = Math.floor(Math.random() * (150 - 60)) + 60 + "px";
     squares.style.height = Math.floor(Math.random() * (150 - 60)) + 60 + "px";
-    squares.style.right = Math.floor(Math.random() * 100) + "vw";
+    squares.style.right = Math.floor(Math.random() * 94) + "vw";
     squares.style.top = Math.floor(Math.random() * (70 - 4)) + 4 + "vh";
     squares.style.backgroundColor =
       "var(--bg-" + Math.floor(Math.random() * 6) + ")";
