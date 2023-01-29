@@ -69,23 +69,47 @@ h1 {
   filter: blur(0);
   transform: translateX(0);
 }
+.icons48 {
+  display: none;
+}
 
-#icons {
+#icons96 {
   margin-top: 20px;
   display: flex;
   flex-direction: row;
 }
-#icons img {
+#icons96 img {
   margin-left: 10px;
   max-width: 96px;
   max-height: 96px;
 }
 
-#icons div {
+#icons96 div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+#icons48 {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+#icons48 span {
+  font-size: 14px;
+}
+#icons48 img {
+  margin-left: 10px;
+  max-width: 48px;
+  max-height: 48px;
+}
+
+#icons48 div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .iconText {
   font-weight: var(--text-sm);
 }
@@ -131,4 +155,16 @@ h1 {
 
 .curve2 .shape-fill {
   fill: var(--bg-nav);
+}
+
+@media screen and (max-width: 700px) {
+  #icons96 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  #icons48 {
+    display: none;
+  }
 }
