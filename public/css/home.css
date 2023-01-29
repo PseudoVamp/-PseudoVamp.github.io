@@ -114,6 +114,10 @@ h1 {
   font-weight: var(--text-sm);
 }
 
+.contactLink {
+  text-decoration: none;
+}
+
 .curve1 {
   margin-bottom: -1px;
   position: absolute;
