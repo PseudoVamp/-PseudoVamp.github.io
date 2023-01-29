@@ -1,3 +1,6 @@
+/* curve maker site https://www.shapedivider.app/ */
+/* color generator site https://coolors.co/ */
+
 *,
 *::before,
 *::after {
@@ -7,22 +10,25 @@
 }
 
 :root {
+  --bg-nav: #4d5061;
   --bg-white: #fef9ef;
   --bg-0: #ffbe0b;
   --bg-1: #fb5607;
   --bg-2: #ff006e;
   --bg-3: #8338ec;
   --bg-4: #3a86ff;
+  --bg-5: #06d6a0;
+
   --light-text: #fff;
   --dark-text: #000;
   --text-main: "Rubik", sans-serif;
   --text-sm: 300;
   --text-md: 500;
-  --text-lg: 900;
+  --text-lg: 700;
+  --text-xlg: 900;
 }
 
 body {
-  height: 200vh;
   background-color: var(--bg-white);
   font-family: var(--text-main);
   font-weight: var(--text-md);
@@ -30,14 +36,14 @@ body {
 }
 
 nav {
-  background-color: #333;
+  background-color: var(--bg-nav);
   display: flex;
   justify-content: space-evenly;
   font-size: 1rem;
   padding: 18px;
   width: 100vw;
-  /* position: absolute; */
-  /* z-index: 1; */
+  position: relative;
+  z-index: 1;
 }
 
 nav a {
@@ -53,45 +59,4 @@ nav a:hover {
   color: #ccc;
   box-shadow: inset 300px 0 0 0 white;
   color: #000;
-}
-
-#randomSquares {
-  height: 100vh;
-  width: 100vw;
-}
-.allSquares {
-  background-color: red;
-  position: absolute;
-  /* z-index: 0; */
-  border-radius: 10%;
-  transition: left 0.5s ease-in-out, top 0.5s ease-in-out;
-}
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-article {
-  height: 300px;
-  width: 200vw;
-  margin: 2px auto;
-  border-radius: 10px;
-}
-.articleOne {
-  background-color: var(--bg-0);
-  transform: rotate(-2deg);
-}
-
-.articleTwo {
-  background-color: var(--bg-1);
-  transform: rotate(2deg);
-}
-.articleThree {
-  background-color: var(--bg-2);
-  transform: rotate(-2deg);
-}
-.articleFour {
-  background-color: var(--bg-3);
-  transform: rotate(2deg);
 }
