@@ -13,8 +13,9 @@
 :root {
   font-size: 16px;
 
-  --bg-nav: #4d5061;
-  --bg-white: #fef9ef;
+  --bg-nav: #293269;
+  --bg-dark: #3b457d;
+  --bg-light: #fef9ef;
   --bg-0: #ffbe0b;
   --bg-1: #fb5607;
   --bg-2: #ff006e;
@@ -22,8 +23,8 @@
   --bg-4: #3a86ff;
   --bg-5: #06d6a0;
 
-  --light-text: #fff;
-  --dark-text: #000;
+  --text-light: #ebe7df;
+  --text-dark: #071c28;
   --text-main: "Rubik", sans-serif;
   --text-sm: 300;
   --text-md: 500;
@@ -35,38 +36,34 @@ body {
   background-color: var(--bg-white);
   font-family: var(--text-main);
   font-weight: var(--text-md);
-  color: var(--dark-text);
+  color: var(--text-dark);
   overflow-x: hidden;
 }
 
 nav {
-  background-color: var(--bg-nav);
+  z-index: 1;
   display: flex;
   justify-content: space-evenly;
-  font-size: 1rem;
-  padding: 18px;
-  width: 100vw;
   position: relative;
-  z-index: 1;
+  background-color: var(--bg-nav);
+  padding: 18px;
 }
 
 nav a {
-  color: var(--light-text);
+  color: var(--text-light);
+  font-size: 1rem;
   font-weight: var(--text-md);
   text-decoration: none;
-
-  box-shadow: inset 0 0 0 0 white;
   transition: all 0.4s ease-in-out 0s;
 }
 
 nav a:hover {
-  color: #ccc;
-  box-shadow: inset 300px 0 0 0 white;
-  color: #000;
+  box-shadow: inset 300px 0 0 0 var(--text-light);
+  color: var(--text-dark);
 }
 
 @media screen and (max-width: 700px) {
-  nav {
-    font-size: 12px;
+  nav a {
+    font-size: 0.8rem;
   }
 }

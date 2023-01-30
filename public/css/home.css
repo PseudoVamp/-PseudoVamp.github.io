@@ -15,7 +15,6 @@ body {
 
 section {
   height: 90vh;
-  width: 100vw;
   padding: 0px 20vw;
   position: relative;
   display: flex;
@@ -42,6 +41,7 @@ h1 {
   z-index: 1;
   top: 45vh;
   left: 40vw;
+  color: var(--text-dark);
 }
 
 h2 {
@@ -59,50 +59,48 @@ h3 {
 #firstSection {
 }
 #secondSection {
-  background-color: var(--bg-nav);
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
   display: flex;
   flex-direction: column;
 }
+#thirdSection {
+  color: var(--text-dark);
+}
 
-/* hidden elements below */
-
+/* hidden and show as you scroll in*/
 .hidden {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);
   transition: all 1s;
 }
-
 .show {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
 }
+
 .icons48 {
   display: none;
 }
 
-#icons96 {
+#icons96,
+#icons48 {
   margin-top: 20px;
   display: flex;
   flex-direction: row;
+}
+#icons96 div,
+#icons48 div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #icons96 img {
   margin-left: 10px;
   max-width: 96px;
   max-height: 96px;
-}
-
-#icons96 div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#icons48 {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
 }
 #icons48 span {
   font-size: 0.8rem;
@@ -113,14 +111,8 @@ h3 {
   max-height: 48px;
 }
 
-#icons48 div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .iconText {
-  font-weight: var(--text-sm);
+  font-weight: var(--text-md);
 }
 
 .contactLink {
@@ -146,7 +138,7 @@ h3 {
 }
 
 .curve1 .shape-fill {
-  fill: var(--bg-nav);
+  fill: var(--bg-dark);
 }
 
 .curve2 {
@@ -167,7 +159,7 @@ h3 {
 }
 
 .curve2 .shape-fill {
-  fill: var(--bg-nav);
+  fill: var(--bg-dark);
 }
 
 @media screen and (max-width: 700px) {
