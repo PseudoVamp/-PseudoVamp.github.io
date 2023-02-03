@@ -117,9 +117,14 @@ select {
 #purpleLegend {
   background-color: purple;
 }
+h3 {
+  text-align: center;
+  margin: 8px 0;
+}
 
 #pianoContainer {
-  display: none;
+  display: flex;
+  justify-content: center;
 }
 .key {
 }
