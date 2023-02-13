@@ -150,11 +150,11 @@ h3 {
   background-color: #333;
 }
 .highlightGreen {
-  background-color: green;
+  background-color: rgb(9, 194, 9);
 }
 
 .highlightYellow {
-  background-color: yellow;
+  background-color: rgb(232, 232, 44);
 }
 
 @media (min-width: 800px) {

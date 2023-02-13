@@ -182,6 +182,12 @@ const removeHighlight = () => {
   for (var i = 0; i < yellowHighlight.length; i++) {
     yellowHighlight[i].classList.remove("highlightYellow");
   }
+  const greenHighlight = Array.from(
+    document.getElementsByClassName("highlightGreen")
+  );
+  for (var i = 0; i < greenHighlight.length; i++) {
+    greenHighlight[i].classList.remove("highlightGreen");
+  }
 };
 
 //makes the submit button work, and takes in the modeMap logic to be used
@@ -189,9 +195,6 @@ const removeHighlight = () => {
 getNotes.addEventListener("click", function () {
   const noteMath = modeMap[mode].noteMath;
   const degrees = modeMap[mode].degree;
-  //DOES NOT WORK RIGHT?
-  //HAVE TO CALL IT A FEW TIMES TO REMOVE EVERY HIGHLIGHT?!?
-  //ONLY REMOVES THREE OR FOUR IF CALLED ONCE?! THE FK
   removeHighlight();
 
   for (let i = 0; i < 7; i++) {
@@ -201,7 +204,11 @@ getNotes.addEventListener("click", function () {
     const pianoNote = document.getElementById(
       `piano${scaleNotes[startSpot + noteMath[i]]}`
     );
-    pianoNote.classList.add("highlightYellow");
+    if (i === 0) {
+      pianoNote.classList.add("highlightGreen");
+    } else {
+      pianoNote.classList.add("highlightYellow");
+    }
   }
 });
 
