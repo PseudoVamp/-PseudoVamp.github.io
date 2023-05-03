@@ -1,18 +1,19 @@
 const randomSquares = document.getElementById("randomSquares");
 
+//run is the counter used to make the squares say things when they move
 let run = 0;
+
+//when each square is "touched" by the mouse, they move to a new random location
 const handleMouseOver = (eachSquare) => {
   // Generate a random x and y coordinate for the div to move to
   const newX = (Math.random() * window.innerWidth) / 1.1;
   const newY = (Math.random() * window.innerHeight) / 1.5;
-  // - 200;
 
-  // const newX = Math.floor(Math.random() * 100) + "vw";
-  // const newY = Math.floor(Math.random() * (70 - 4)) + 4 + "vh";
-
+  //assigns each square their new location in pixels
   eachSquare.target.style.right = newX + "px";
   eachSquare.target.style.top = newY + "px";
   run++;
+  //funny words the squares cycle through in the console when they are touched
   if (run % 7 === 0) {
     console.log("Don't touch me!");
   }
@@ -33,6 +34,7 @@ const handleMouseOver = (eachSquare) => {
   }
 };
 
+//creates 30 "squares (divs)" gives them ID's and random locations / colors
 const createSquares = (x, y) => {
   for (let i = 0; i < 30; i++) {
     let squares = document.createElement("div");
@@ -50,16 +52,13 @@ const createSquares = (x, y) => {
 
     const eachSquare = document.getElementById(`color${i}`);
     eachSquare.addEventListener("mouseover", handleMouseOver);
-    // eachSquare.addEventListener("mouseover", handleMouseOut);
   }
 };
 
+//calls createSquares function and passes through randomSquares, and color as variables
 createSquares(randomSquares, "color");
 
-//making things animate on scroll in
-//
-//
-
+//creates IntersectionObeservers, when your screen passes a certain point they make things animate into view
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {

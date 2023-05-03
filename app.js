@@ -9,32 +9,30 @@ const path = require("path");
 
 //tells the app to use extended javascript
 //need to install with npm, and then express will require it so you dont have to
-//!!!the default folder ejs will look for pages to load is ***/views***
+//IMPORTANT!!! the default folder ejs will look for assets to load is "/views"
 app.set("view engine", "ejs");
 
-//if opening script.js from another outside location, this forces the app to look in
-//the correct directory ***/views*** relative to the script.js file to load the pages
-//requires the ***const path = require("path")*** thing from above ^^^
+//If app files are opened from an outside location, this setting tells the app to look at this specific folder for assets
+//requires access to "path"
 app.set("views", path.join(__dirname, "/views"));
 
 //tells express that you want to serve the app all of the assets (css js) in the public folder
-//also does the thing from above, tells it to use the public folder relative to the script.js, if opened from outside
+//If app files are opened from an outside location, this setting tells the app to look at this specific folder for assets
+//requires access to "path"
 app.use(express.static(path.join(__dirname, "public")));
 
-//sets the route/home of this project to this file with a request and responce
+//sets the route/home of this project to this file with a request and response
 app.get("/", (req, res) => {
   //res.render sends the page that you wish to load with that URL
-  //!!!default folder ejs looks is ***/views***, (also dont NEED .ejs)
   res.render("home.ejs");
 });
 
 //loads the second page url /musicNotes
 app.get("/musicNotes", (req, res) => {
-  //Sets a second parameter called "rand" that is avaliable in the template for use
   res.render("musicNotes.ejs");
 });
 
-//loats another page with the url /picPage
+//loads another page with the url /picPage
 app.get("/picPage", (req, res) => {
   res.render("picPage.ejs");
 });

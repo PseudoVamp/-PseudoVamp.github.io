@@ -10,7 +10,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* height: 90vh; */
   overflow: hidden;
   margin: 0;
   width: 95vw;
