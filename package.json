@@ -2,7 +2,7 @@
   "name": "pseudovamp",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "app.js",
   "engines": {
     "node": "18.x"
   },

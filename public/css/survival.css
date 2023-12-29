@@ -1,0 +1,129 @@
+/* colors used
+#24334b
+#c0b7ab
+#607d90
+#85a9ae
+#717473
+#715558
+#7196ae
+#171114
+#a34f59
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* used for debugging
+  outline: 1px solid green;
+  background: rgb(0 100 0 /0.1); */
+  color: #171114;
+  font-size: 16px;
+}
+html {
+  background-image: url("/pics/spaceBackgroundColor.png");
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-family: "Rubik", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("/pics/firstLayerSpace.png");
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+}
+
+.centerDiv {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 90%;
+}
+
+h1 {
+  width: 95vw;
+  height: 60vh;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+
+  color: #f5f5f5;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+#buttonHolder {
+  width: 95%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+button {
+  font-size: 0.9rem;
+  margin: 0 auto;
+  padding: 10px;
+  height: 80px;
+  width: 150px;
+
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  will-change: box-shadow, transform;
+  background: #fcfcfd;
+  box-shadow: 0px 2px 4px rgb(45 35 66 / 40%),
+    0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
+  border-radius: 6px;
+  color: #36395a;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+button:hover {
+  box-shadow: 0px 4px 8px rgb(45 35 66 / 40%),
+    0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
+  transform: translateY(-2px);
+}
+button:active {
+  box-shadow: inset 0px 3px 7px #d6d6e7;
+  transform: translateY(2px);
+}
+
+.notHidden {
+  opacity: 100;
+  transition: opacity 0.7s ease;
+}
+.hidden {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+@media screen and (min-width: 400px) {
+  h1 {
+    font-size: 1.2rem;
+    width: 60vw;
+  }
+  button {
+    width: 30vw;
+  }
+}
+@media screen and (min-width: 500px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  button {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+    height: 40vh;
+  }
+}

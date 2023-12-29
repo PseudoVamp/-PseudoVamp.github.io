@@ -42,6 +42,11 @@ app.get("/projects", (req, res) => {
   res.render("projects.ejs");
 });
 
+//loads the survival game on the project page
+app.get("/survival", (req, res) => {
+  res.render("survival.ejs");
+});
+
 //sets the node script.js command to open a server listening on the specified port
 //lets you go to localhost:3000 to load the app (requires node script.js running)
 app.listen(3000, () => {
