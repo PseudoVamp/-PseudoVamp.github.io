@@ -1,15 +1,3 @@
-/* colors used
-#24334b
-#c0b7ab
-#607d90
-#85a9ae
-#717473
-#715558
-#7196ae
-#171114
-#a34f59
-*/
-
 *,
 *::before,
 *::after {
@@ -30,13 +18,11 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   font-family: "Rubik", sans-serif;
-  height: 100%;
 
   margin: 0;
+  padding: 0;
+  height: 100vh;
   overflow: hidden;
-
-  height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
-  overflow: auto; /* Enable scrolling if needed */
 
   display: flex;
   align-items: center;
@@ -50,6 +36,10 @@ body {
   transition: background-image 1s ease-in-out;
 }
 
+#app-container {
+  height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  overflow: auto; /* Enable scrolling if needed */
+}
 .centerDiv {
   display: flex;
   align-items: center;

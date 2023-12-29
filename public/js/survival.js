@@ -5,6 +5,18 @@ const resetButton = document.createElement("button");
 //sets canclick (on buttons) to false until the paragraph from slowintext is done loading
 let canClick = false;
 
+// JavaScript to handle initial and dynamic height adjustments
+function setAppHeight() {
+  const appContainer = document.getElementById("app-container");
+  appContainer.style.height = `${window.innerHeight}px`;
+}
+
+// Set initial height
+setAppHeight();
+
+// Update height on window resize
+window.addEventListener("resize", setAppHeight);
+
 const backgrounds = [
   "/pics/firstLayerSpace.png",
   "/pics/secondLayerSpace.png",
@@ -332,11 +344,7 @@ function changeUserDisplayText(option) {
       startSlowInText(
         "You grab the weapon.     It starts hissing.     You experiece heat emanating from the handle.       You decide to throw the weapon away from you for saftey.       As you swing your arm back, the weapon discharges.         A large blast occurs.       You are dead."
       );
-      setTimeout(function () {
-        changeButtontext("", "");
-      }, 700);
-      buttonOneChoice = "";
-      buttonTwoChoice = "";
+      removeButton();
       break;
 
     case "largeContainer":
