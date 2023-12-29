@@ -6,20 +6,26 @@ const resetButton = document.createElement("button");
 let canClick = false;
 
 const backgrounds = [
-  'url("/pics/firstLayerSpace.png")',
-  'url("/pics/secondLayerSpace.png")',
-  'url("/pics/thirdLayerSpace.png")',
-  'url("/pics/fourthLayerSpace.png")',
+  "/pics/firstLayerSpace.png",
+  "/pics/secondLayerSpace.png",
+  "/pics/thirdLayerSpace.png",
+  "/pics/fourthLayerSpace.png",
 ];
 
-let currentIndex = 1;
+let currentIndex = 0;
 
 function changeBackground() {
-  document.body.style.backgroundImage = backgrounds[currentIndex];
+  document.body.style.backgroundImage = `url("${backgrounds[currentIndex]}")`;
   currentIndex = (currentIndex + 1) % backgrounds.length;
+
+  // Use setTimeout to call changeBackground after 2 seconds
+  setTimeout(() => {
+    requestAnimationFrame(changeBackground);
+  }, 2000);
 }
 
-setInterval(changeBackground, 2000);
+// Call changeBackground to set the initial background
+changeBackground();
 
 let buttonOneChoice = "pressEject";
 let buttonTwoChoice = "checkSurroundings";
