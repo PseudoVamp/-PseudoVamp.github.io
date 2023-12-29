@@ -29,7 +29,7 @@ let currentIndex = 0;
 function changeBackground() {
   document.body.style.backgroundImage = `url("${backgrounds[currentIndex]}")`;
   currentIndex = (currentIndex + 1) % backgrounds.length;
-
+  console.log("backgroundChanging");
   // Use setTimeout to call changeBackground after 2 seconds
   setTimeout(() => {
     requestAnimationFrame(changeBackground);
