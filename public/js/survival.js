@@ -38,6 +38,7 @@ function changeBackground() {
 
 // Call changeBackground to set the initial background
 changeBackground();
+//STOP BACKGROUND CODE
 
 let buttonOneChoice = "pressEject";
 let buttonTwoChoice = "checkSurroundings";

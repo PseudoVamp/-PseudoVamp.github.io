@@ -29,7 +29,7 @@ body {
   justify-content: center;
 
   will-change: transform;
-  background-image: url("/pics/firstLayerSpace.png");
+  /* background-image: url("/pics/firstLayerSpace.png"); */
   transform: translateZ(0);
   background-size: cover;
   background-position: center;
