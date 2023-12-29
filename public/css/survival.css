@@ -32,11 +32,16 @@ body {
   font-family: "Rubik", sans-serif;
   height: 100%;
 
+  margin: 0;
+  overflow: hidden;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
+  will-change: transform;
   background-image: url("/pics/firstLayerSpace.png");
+  transform: translateZ(0);
   background-size: cover;
   background-position: center;
   transition: background-image 1s ease-in-out;
@@ -47,6 +52,8 @@ body {
   align-items: center;
   flex-direction: column;
   max-width: 90%;
+
+  height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
 }
 
 h1 {
