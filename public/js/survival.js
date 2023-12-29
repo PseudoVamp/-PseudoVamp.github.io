@@ -17,27 +17,28 @@ setAppHeight();
 // Update height on window resize
 window.addEventListener("resize", setAppHeight);
 
-const backgrounds = [
-  "/pics/firstLayerSpace.png",
-  "/pics/secondLayerSpace.png",
-  "/pics/thirdLayerSpace.png",
-  "/pics/fourthLayerSpace.png",
-];
-console.log("backgroundChanging");
-let currentIndex = 0;
+//maybe one day i'll get the background to not flicker....
+// const backgrounds = [
+//   "/pics/firstLayerSpace.png",
+//   "/pics/secondLayerSpace.png",
+//   "/pics/thirdLayerSpace.png",
+//   "/pics/fourthLayerSpace.png",
+// ];
+// console.log("backgroundChanging");
+// let currentIndex = 0;
 
-function changeBackground() {
-  document.body.style.backgroundImage = `url("${backgrounds[currentIndex]}")`;
-  currentIndex = (currentIndex + 1) % backgrounds.length;
+// function changeBackground() {
+//   document.body.style.backgroundImage = `url("${backgrounds[currentIndex]}")`;
+//   currentIndex = (currentIndex + 1) % backgrounds.length;
 
-  // Use setTimeout to call changeBackground after 2 seconds
-  setTimeout(() => {
-    requestAnimationFrame(changeBackground);
-  }, 5000);
-}
+//   // Use setTimeout to call changeBackground after 2 seconds
+//   setTimeout(() => {
+//     requestAnimationFrame(changeBackground);
+//   }, 5000);
+// }
 
-// Call changeBackground to set the initial background
-changeBackground();
+// // Call changeBackground to set the initial background
+// changeBackground();
 
 let buttonOneChoice = "pressEject";
 let buttonTwoChoice = "checkSurroundings";
