@@ -59,7 +59,7 @@ h1 {
 }
 #buttonHolder {
   width: 95%;
-  height: 30vh;
+  height: 25vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
