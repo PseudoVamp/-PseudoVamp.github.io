@@ -24,12 +24,14 @@
 }
 html {
   background-image: url("/pics/spaceBackgroundColor.png");
+  height: 100%;
 }
 
 body {
   font-family: "Roboto", sans-serif;
   font-family: "Rubik", sans-serif;
-  min-height: 100vh;
+  height: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
