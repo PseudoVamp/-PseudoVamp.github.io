@@ -29,7 +29,7 @@ body {
   justify-content: center;
 
   will-change: transform;
-  /* background-image: url("/pics/firstLayerSpace.png"); */
+  background-image: url("/pics/firstLayerSpace.png");
   transform: translateZ(0);
   background-size: cover;
   background-position: center;
@@ -38,7 +38,7 @@ body {
 
 #app-container {
   height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
-  overflow: auto; /* Enable scrolling if needed */
+  overflow: auto;
 }
 .centerDiv {
   display: flex;

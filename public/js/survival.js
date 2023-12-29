@@ -5,7 +5,7 @@ const resetButton = document.createElement("button");
 //sets canclick (on buttons) to false until the paragraph from slowintext is done loading
 let canClick = false;
 
-// JavaScript to handle initial and dynamic height adjustments
+//handle initial and dynamic height adjustments
 function setAppHeight() {
   const appContainer = document.getElementById("app-container");
   appContainer.style.height = `${window.innerHeight}px`;
@@ -33,12 +33,11 @@ function changeBackground() {
   // Use setTimeout to call changeBackground after 2 seconds
   setTimeout(() => {
     requestAnimationFrame(changeBackground);
-  }, 2000);
+  }, 5000);
 }
 
 // Call changeBackground to set the initial background
 changeBackground();
-//STOP BACKGROUND CODE
 
 let buttonOneChoice = "pressEject";
 let buttonTwoChoice = "checkSurroundings";
