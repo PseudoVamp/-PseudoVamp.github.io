@@ -49,7 +49,7 @@ body {
 
 h1 {
   width: 95vw;
-  height: 60vh;
+  height: 50vh;
   font-size: 1.2rem;
   margin-bottom: 10px;
 
@@ -59,7 +59,7 @@ h1 {
 }
 #buttonHolder {
   width: 95%;
-  height: 25vh;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
