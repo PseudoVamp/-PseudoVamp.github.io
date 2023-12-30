@@ -77,7 +77,7 @@ function slowInText(text) {
     hideButton();
     if (narrativeTextArray.length > 0) {
       narrativeText.innerHTML += narrativeTextArray.shift();
-      loopTimer = setTimeout(recursiveSlowInText, 40);
+      loopTimer = setTimeout(recursiveSlowInText, 50);
     } else {
       canClick = true;
       showButton();
