@@ -91,7 +91,7 @@ function slowInText(text) {
 //calls the function the first time and sets some starting text
 setTimeout(function () {
   slowInText(
-    "You awake on what appears to be an alien planet.       Your head hurts.      You remember nothing."
+    "TESTING You awake on what appears to be an alien planet.       Your head hurts.      You remember nothing."
   );
 }, 700);
 

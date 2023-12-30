@@ -17,7 +17,6 @@ html {
 
 body {
   font-family: "Roboto", sans-serif;
-  font-family: "Rubik", sans-serif;
 
   margin: 0;
   padding: 0;
@@ -76,7 +75,6 @@ button {
   outline: 0;
   border: 0;
   cursor: pointer;
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
   will-change: box-shadow, transform;
   background: #fcfcfd;
   box-shadow: 0px 2px 4px rgb(45 35 66 / 40%),
