@@ -2,6 +2,7 @@ const narrativeText = document.getElementById("mainUserDisplayText");
 const userChoiceOne = document.getElementById("choiceOne");
 const userChoiceTwo = document.getElementById("choiceTwo");
 const resetButton = document.createElement("button");
+
 //sets canclick (on buttons) to false until the paragraph from slowintext is done loading
 let canClick = false;
 
@@ -17,68 +18,47 @@ setAppHeight();
 // Update height on window resize
 window.addEventListener("resize", setAppHeight);
 
-//maybe one day i'll get the background to not flicker....
-// const backgrounds = [
-//   "/pics/firstLayerSpace.png",
-//   "/pics/secondLayerSpace.png",
-//   "/pics/thirdLayerSpace.png",
-//   "/pics/fourthLayerSpace.png",
-// ];
-// console.log("backgroundChanging");
-// let currentIndex = 0;
-
-// function changeBackground() {
-//   document.body.style.backgroundImage = `url("${backgrounds[currentIndex]}")`;
-//   currentIndex = (currentIndex + 1) % backgrounds.length;
-
-//   // Use setTimeout to call changeBackground after 2 seconds
-//   setTimeout(() => {
-//     requestAnimationFrame(changeBackground);
-//   }, 5000);
-// }
-
-// // Call changeBackground to set the initial background
-// changeBackground();
-
+//sets initial button choices for switch statement triggers
 let buttonOneChoice = "pressEject";
 let buttonTwoChoice = "checkSurroundings";
+
+//first button function to call switch statement when clicked
 userChoiceOne.addEventListener("click", function () {
   if (canClick) {
-    hideButton();
+    hideButton(); //hides the button after choice is made
     canClick = false; // Disable clicking
     setTimeout(function () {
+      //calls the function to display the new choices narrative text on a timeout
       changeUserDisplayText(buttonOneChoice);
     }, 700);
   }
 });
-
+//second button, same as above
 userChoiceTwo.addEventListener("click", function () {
   if (canClick) {
     hideButton();
     canClick = false; // Disable clicking
-
     setTimeout(function () {
       changeUserDisplayText(buttonTwoChoice);
     }, 700);
   }
 });
 
-// sets up three variables, the text to be displayed, an array to hold and shift the text into view
-// and a loop timer to set how slowly each letter comes into view
-var slowDisplayNarration = "";
-var narrativeTextArray = slowDisplayNarration.split("");
-var loopTimer;
-//the function that recursivly calls itself to add a letter to the user view until all the letters in
-//the array are dispayed, then the function terminates
+//slowInText is the function that is called to play the initial text, and then user text choices slowly as the main narration
 function slowInText(text) {
-  slowDisplayNarration = text;
-  var narrativeTextArray = slowDisplayNarration.split("");
+  var slowDisplayNarration = ""; //the text to be displayed slowly
+  var loopTimer; //sets how slowly each letter comes into view
+  slowDisplayNarration = text; //takes the argument that the user chooses from the switch statement and sets it to be the new slow in text
+  var narrativeTextArray = slowDisplayNarration.split(""); //takes the string of text and turns it into an array, seperated by each letter
+  //function that calls itself, until all elements from the  narrativeTextArray are moved
   function recursiveSlowInText() {
     hideButton();
     if (narrativeTextArray.length > 0) {
+      //if the array still has characters in it, shift then one by one into the narrativetext html element to be seen by the user
       narrativeText.innerHTML += narrativeTextArray.shift();
-      loopTimer = setTimeout(recursiveSlowInText, 40);
+      loopTimer = setTimeout(recursiveSlowInText, 40); //sets the timeout between shifting of characters to make it feel like talking
     } else {
+      //if all elements have been moved, show the new butotn choices, make them clickable, and reset the loop timer to stop calling the function
       canClick = true;
       showButton();
       clearTimeout(loopTimer);
@@ -88,7 +68,7 @@ function slowInText(text) {
   recursiveSlowInText();
 }
 
-//calls the function the first time and sets some starting text
+//calls the function initially to display the starting text
 setTimeout(function () {
   slowInText(
     "You awake on what appears to be an alien planet.       Your head hurts.      You remember nothing."
@@ -103,7 +83,7 @@ function startSlowInText(newText) {
   slowInText(newText);
 }
 
-//function that adds or removes a class of not/hidden to the buttons for 7 seconds after clicking
+//functions that adds or removes a class of not/hidden to the buttons for 7 seconds after clicking
 function hideButton() {
   // Hide the button by adding the hidden class
   userChoiceOne.classList.add("hidden");
@@ -123,13 +103,12 @@ function showButton() {
 //calls initially to hide buttons on startup
 hideButton();
 
-//used to update the two button choices text when a new selection is avaliable
-//this is called when the narrative text is changed in the switch statement
+//called by the switch statement to update buttons with new choices based on the narration
 function changeButtontext(firstButton, secondButton) {
   userChoiceOne.innerHTML = firstButton;
   userChoiceTwo.innerHTML = secondButton;
 }
-function addResetButton() {}
+
 //used to hide the buttons in case of game over, called in certain instances in the switch statements
 function removeButton() {
   var buttonContainer = userChoiceOne.parentNode;
@@ -137,21 +116,21 @@ function removeButton() {
   buttonContainer.removeChild(userChoiceTwo);
   createResetButton(buttonContainer);
 }
+
+// Create a reset button element
 function createResetButton(buttonContainer) {
-  // Create a reset button element
-
   resetButton.textContent = "Reset"; // Set the button text content
-
   // Add a click event listener to the reset button
   resetButton.addEventListener("click", function () {
-    window.location.reload();
+    window.location.reload(); //reloads the entire window to replay the game
   });
-
   // Append the reset button to the specified parent node
   buttonContainer.appendChild(resetButton);
 }
 
 //entirety of the games narrative and options for the player
+//button choices lead you to the next case and set the text to be displayed
+//change button text is called on a timeout, so it has time to fade out before the text is changed and doesnt look jaring
 function changeUserDisplayText(option) {
   switch (option) {
     case "pressEject":
@@ -357,6 +336,7 @@ function changeUserDisplayText(option) {
   }
 }
 
+//copy and paste this to create more cases and continue the game narrative
 // case "":
 //   startSlowInText(
 //     ""
